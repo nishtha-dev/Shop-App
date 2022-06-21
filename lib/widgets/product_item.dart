@@ -17,7 +17,7 @@ class ProductItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final product = Provider.of<Product>(context);
+    final product = Provider.of<Product>(context, listen: false);
     return GridTile(
       child: GestureDetector(
         onTap: () {
@@ -35,8 +35,10 @@ class ProductItem extends StatelessWidget {
           onPressed: (() {
             product.toggleFavorite();
           }),
-          icon: Icon(
-              product.isFavourate ? Icons.favorite : Icons.favorite_border),
+          icon: Consumer<Product>(
+            builder: (context, value, child) => Icon(
+                product.isFavourate ? Icons.favorite : Icons.favorite_border),
+          ),
           color: Theme.of(context).accentColor,
         ),
         title: Text(
