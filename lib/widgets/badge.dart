@@ -4,15 +4,12 @@ class Badge extends StatelessWidget {
   final Widget child;
   final String value;
   final Color color;
-  
-  Badge({
 
+  Badge({
     required this.child,
     required this.value,
-    this.color=Theme.of(context).accentColor,
-  })
-
-  
+    this.color = Colors.amber,
+  });
 
   @override
   Widget build(BuildContext context) {
