@@ -15,7 +15,7 @@ class CartItem {
 }
 
 class Cart with ChangeNotifier {
-  late Map<String, CartItem> _items;
+  late Map<String, CartItem> _items = {};
 
   Map<String, CartItem> get items {
     return {..._items};
@@ -23,6 +23,14 @@ class Cart with ChangeNotifier {
 
   int get itemCount {
     return _items.length;
+  }
+
+  double get totalAmount {
+    double total = 0.0;
+    _items.forEach((key, value) {
+      total += value.price * value.quantity;
+    });
+    return total;
   }
 
   void addCartItem(String title, double price, String productId) {
@@ -43,5 +51,10 @@ class Cart with ChangeNotifier {
               title: title,
               quantity: 1));
     }
+  }
+
+  void removeItem(String productId) {
+    _items.remove(productId);
+    notifyListeners();
   }
 }
