@@ -54,7 +54,7 @@ class _ProductsOverviewState extends State<ProductsOverview> {
                   ])),
           Consumer<Cart>(
             builder: (context, cart, child) =>
-                Badge(child: child!, value: cart.itemCount.toString()),
+                BadgeWidget(child: child!, value: cart.itemCount.toString()),
             child: IconButton(
                 onPressed: (() {
                   Navigator.of(context).pushNamed(CartScreen.routeName);

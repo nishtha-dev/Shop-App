@@ -41,14 +41,14 @@ class ProductItem extends StatelessWidget {
             builder: (context, value, child) => Icon(
                 product.isFavourate ? Icons.favorite : Icons.favorite_border),
           ),
-          color: Theme.of(context).accentColor,
+          color: Theme.of(context).cardColor,
         ),
         title: Text(
           product.title,
           textAlign: TextAlign.center,
         ),
         trailing: IconButton(
-            color: Theme.of(context).accentColor,
+            color: Theme.of(context).cardColor,
             onPressed: (() {
               cart.addCartItem(product.title, product.price, product.id);
             }),
