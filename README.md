@@ -3,7 +3,7 @@
 <!-- ![ScreenShots](/assets/images/Simulator Screenshot - iPhone 14 Pro - 2023-06-03 at 23.42.04.png?raw=true "Screenshot 1") -->
 <img src="/assets/images/Simulator Screenshot - iPhone 14 Pro - 2023-06-03 at 23.42.04.png" align='left' height="600" width="400" alt="SS" title="Employee Data title">
 Learning State Management using Provider in Flutter
-<img src="assets/images/Screenshot 2023-06-04 at 12.02.14 AM.png" align='right' height="600" width="400" alt="SS" title="Employee Data title">
+<img src="assets/images/Screenshot 2023-06-04 at 12.02.14 AM.png" align='left' height="400" width="500" alt="SS" title="Employee Data title">
 <img src="/assets/images/Simulator Screenshot - iPhone 14 Pro - 2023-06-03 at 23.42.26.png" align='right' height="600" width="400" alt="SS" title="Employee Data title">
 App State needs to be lifted up in order to be accessible between carts & product details screen
 <img src="assets/images/Simulator Screenshot - iPhone 14 Pro - 2023-06-03 at 23.42.44.png" align='left' height="600" width="400" alt="SS" title="Employee Data title">
