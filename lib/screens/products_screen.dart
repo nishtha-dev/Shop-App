@@ -20,7 +20,7 @@ class _ProductsOverviewState extends State<ProductsOverview> {
   var _showfavorites = false;
   @override
   Widget build(BuildContext context) {
-    //final productsData = Provider.of<Products>(context);
+    // final productsData = Provider.of<Products>(context);
 
     return Scaffold(
       appBar: AppBar(
@@ -53,8 +53,10 @@ class _ProductsOverviewState extends State<ProductsOverview> {
                     )
                   ])),
           Consumer<Cart>(
-            builder: (context, cart, child) =>
-                BadgeWidget(child: child!, value: cart.itemCount.toString()),
+            builder: (context, cart, child) {
+              return BadgeWidget(
+                  child: child!, value: cart.itemCount.toString());
+            },
             child: IconButton(
                 onPressed: (() {
                   Navigator.of(context).pushNamed(CartScreen.routeName);

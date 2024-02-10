@@ -4,8 +4,6 @@ import 'package:shop_app/dummy_product.dart';
 import 'package:shop_app/providers/product_providers.dart';
 import 'package:shop_app/widgets/product_item.dart';
 
-import '../providers/products.dart';
-
 class ProductsGrid extends StatelessWidget {
   final bool filteredOption;
   const ProductsGrid({Key? key, required this.filteredOption})
@@ -18,7 +16,7 @@ class ProductsGrid extends StatelessWidget {
         filteredOption ? productsData.favoriteItems : productsData.items;
     return GridView.builder(
         padding: const EdgeInsets.all(10.0),
-        itemCount: dummyProducts.length,
+        itemCount: products.length,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           childAspectRatio: 3 / 2,

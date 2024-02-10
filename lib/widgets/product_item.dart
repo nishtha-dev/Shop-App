@@ -48,11 +48,23 @@ class ProductItem extends StatelessWidget {
           textAlign: TextAlign.center,
         ),
         trailing: IconButton(
-            color: Theme.of(context).cardColor,
-            onPressed: (() {
-              cart.addCartItem(product.title, product.price, product.id);
-            }),
-            icon: const Icon(Icons.shopping_cart)),
+          color: Theme.of(context).cardColor,
+          onPressed: (() {
+            product.toggleCart();
+            if (cart.items.containsKey(product.id)) {
+              cart.removeItem(product.id);
+              return;
+            }
+            cart.addCartItem(product.title, product.price, product.id);
+          }),
+          icon: Consumer<Product>(
+            builder: (context, value, child) => Icon(
+              product.isInCart
+                  ? Icons.shopping_cart
+                  : Icons.shopping_cart_outlined,
+            ),
+          ),
+        ),
       ),
     );
   }
