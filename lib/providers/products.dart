@@ -23,9 +23,4 @@ class Product with ChangeNotifier {
     isFavourate = !isFavourate;
     notifyListeners();
   }
-
-  void toggleCart() {
-    isInCart = !isInCart;
-    notifyListeners();
-  }
 }

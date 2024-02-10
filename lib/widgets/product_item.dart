@@ -50,7 +50,6 @@ class ProductItem extends StatelessWidget {
         trailing: IconButton(
           color: Theme.of(context).cardColor,
           onPressed: (() {
-            product.toggleCart();
             if (cart.items.containsKey(product.id)) {
               cart.removeItem(product.id);
               return;
@@ -59,7 +58,7 @@ class ProductItem extends StatelessWidget {
           }),
           icon: Consumer<Product>(
             builder: (context, value, child) => Icon(
-              product.isInCart
+              cart.items.containsKey(product.id)
                   ? Icons.shopping_cart
                   : Icons.shopping_cart_outlined,
             ),
